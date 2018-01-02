@@ -1,0 +1,128 @@
+<!--	WEB: Sun interference monitoring	-->
+
+<HTML>
+
+
+<HEAD>
+ 	<title>SUN MONITORING</title>
+  	<meta http-equiv="REFRESH" content="180" URL="http://10.116.12.94/indexSunINTFCal.html">
+  	<script src="/SunINTFCal/SunINTFindexJS.js" type="text/javascript"></script>
+  	<link href="/SunINTFCal/SunINTFindexSTY.css" rel="stylesheet">
+</HEAD>
+
+<BODY bgcolor="white">
+
+	<a name="TOP"></a>
+	<P ALIGN=left>&nbsp;&nbsp;
+	<img src=/home/pav/Escritorio/SUNopera/v2/SunINTFCal/cgi-bin/img/Sun2.png height="100" width="100%"></P>
+	<a target="_blank" href="/SunINTFCal/help.pdf" title="Report of the operative sun monitoring process" align="right"><font size=4>Documentation</font></a>
+
+	<br><br><br>
+
+
+	<hr size=2 width=100% color="black" align= right />
+	<font color="black" face="Verdana" size="5">Last updated results</font>
+	<hr size=2 width=100% color="black" align= right />
+
+	<br>
+
+
+	<ul>
+
+	<li type="disc"><font color="black" face="Verdana" size="4"> <b>Calibration parameters:</b></font>
+	
+	<br><br>
+
+		<FORM name="plots" action=/SunINTFCal/cgi-bin/calib_plots.cgi METHOD=GET>
+		
+			<font color="black" face="Verdana" size="3">Radar:</font>
+			<SELECT NAME="radar" style="font-size:12pt">
+   				<OPTION VALUE="CDV">Panadella (CDV)
+   				<OPTION VALUE="LMI">Tivissa-Llaberia (LMI)
+   				<OPTION VALUE="PDA">Puig d'Arques (PDA)
+   				<OPTION VALUE="PBE">Vallirana (PBE)
+ 			</SELECT>&nbsp;&nbsp;&nbsp;&nbsp;
+
+			<font color="black" face="Verdana" size="3">Window:</font>
+			<SELECT NAME="mode" style="font-size:12pt">
+   				<OPTION VALUE="1day">Daily fit
+   				<OPTION VALUE="3day">3-day fit 
+			</SELECT>
+
+			<br><br>
+
+			<label style="cursor:pointer" title="Radar-estimate of the power at the TOA in comparison with the solar reference from DRAO observatory"><input type="checkbox" name="type" value="PTOA" style="cursor:pointer">Power (relative)</label><br>
+			<label style="cursor:pointer" title="Difference between the radar-estimated PTOA and the DRAO reference, in comparison with the calibration constant"><input type="checkbox" name="type" value="PowerDiff" style="cursor:pointer">Power (absolute)</label><br>
+			<label style="cursor:pointer" title="Estimated azimuth and elevation biases in antenna pointing"><input type="checkbox" name="type" value="Pointing" style="cursor:pointer">Pointing bias</label><br>
+			<label style="cursor:pointer" title="Estimated solar widths in azimuth and elevation"><input type="checkbox" name="type" value="Widths" style="cursor:pointer">Solar widths</label><br>
+			<label style="cursor:pointer" title="Scatter plot of Sun interferences compared to resulting model fit"><input type="checkbox" name="type" value="ScatterFit" style="cursor:pointer">Scatter and fit</label><br>
+			<label style="cursor:pointer" title="Adjusted R-squared value of the fit"><input type="checkbox" name="type" value="Qfit" style="cursor:pointer">Quality of fit</label><br><br>
+
+		<input type=submit value="View" width="30" color="oldlace" style="font-size:14pt;cursor:pointer">
+		</FORM>
+	</li>
+
+	<br><br>
+
+	<li type="disc"><font color="black" face="Verdana" size="4"><b>Detected interferences:</b></font>
+
+	<br><br>
+
+		<FORM name="polar" action=/SunINTFCal/cgi-bin/polar_plots.cgi METHOD=GET>
+
+			<font color="black" face="Verdana" size="3">Radar:</font>
+			<SELECT NAME="radar" style="font-size:12pt">
+   				<OPTION VALUE="CDV">Panadella (CDV)
+   				<OPTION VALUE="LMI">Tivissa-Llaberia (LMI)
+   				<OPTION VALUE="PDA">Puig d'Arques (PDA)
+   				<OPTION VALUE="PBE">Vallirana (PBE)
+ 			</SELECT>
+
+			<br><br>
+
+			<label style="cursor:pointer" title="Polar diagram of the NUMBER of constant and continuous interference COUNTS for each azimuth"><input type="checkbox" name="type" value="FREQ" style="cursor:pointer">Frequency counts</label><br>
+			<label style="cursor:pointer" title="Polar diagram of the MAXIMUM power of constant and continuous interferences at each azimuth"><input type="checkbox" name="type" value="MAXpow" style="cursor:pointer">Maximum power</label><br>
+			<label style="cursor:pointer" title="Polar diagram of the MEDIAN power of constant and continuous interferences at each azimuth"><input type="checkbox" name="type" value="MEANpow" style="cursor:pointer">Mean power</label><br><br>
+
+		<input type=submit value="View" width="30" color="oldlace" style="font-size:14pt;cursor:pointer">
+		</FORM>
+	</li>
+
+	<br><br>
+
+	<li type="disc"><font color="black" face="Verdana" size="4"> <b>Number of solar interferences:</b></font>
+
+	<br><br>
+
+		<FORM name="nintf" action=/SunINTFCal/cgi-bin/polar_plots.cgi METHOD=GET>
+
+			<font color="black" face="Verdana" size="3">Radar:</font>
+			<SELECT NAME="radar" style="font-size:12pt">
+   				<OPTION VALUE="CDV">Panadella (CDV)
+   				<OPTION VALUE="LMI">Tivissa-Llaberia (LMI)
+   				<OPTION VALUE="PDA">Puig d'Arques (PDA)
+   				<OPTION VALUE="PBE">Vallirana (PBE)
+ 			</SELECT>
+
+		<br><br>
+
+		<input type=submit name="calendar" value="View" width="40" color="oldlace" style="font-size:14pt;cursor:pointer" title="Calendar of daily detected number of SOLAR interferences">
+		</FORM>
+	</li>
+
+	</ul>
+
+
+
+<br><br>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<hr size=1 width=100% color="black" align= right />
+<table style="width:100%"><tr><th style="width:50%" align="left"><img src=/SunINTFCal/cgi-bin/img/generalitat_logo.gif height="25" width="35%"></th>
+<th style="width:50%" align="right"><img src=/SunINTFCal/cgi-bin/img/meteocat_logo.jpg height="25" width="13%"></th></tr></table>
+<hr size=1 width=100% color="black" align= right />
+
+</BODY>
+</HTML>
